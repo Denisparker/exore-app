@@ -49,13 +49,7 @@ const CreateProduct: React.FC = () => {
 
   const handleClick = () => {
     if (query.id === '0') {
-      if (
-        newProduct.title !== '' ||
-        newProduct.price !== '' ||
-        newProduct.category !== ''
-      ) {
-        dispatch(addProduct(newProduct))
-      }
+      dispatch(addProduct(newProduct))
     } else {
       dispatch(updateProduct(newProduct))
     }
@@ -99,8 +93,8 @@ const CreateProduct: React.FC = () => {
                     alert('Данные заполнены некорректно')
                   } else {
                     alert('Успешно сохранено')
+                    handleClick()
                   }
-                  handleClick()
                 }}
               >
                 Done
