@@ -12,6 +12,7 @@ import {
   Input,
   Switch,
 } from '@chakra-ui/react'
+import Link from 'next/link'
 
 const ProductsList: React.FC = () => {
   ///
@@ -45,11 +46,12 @@ const ProductsList: React.FC = () => {
   }
 
   const productsBySearch = searchQuery
-    ? products.filter((i) => (
-        i.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    ? products.filter(
+        (i) =>
+          i.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
           i.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
           i.category.toLowerCase().includes(searchQuery.toLowerCase())
-    ))
+      )
     : products
 
   const getFilteredProducts = () => {
@@ -68,6 +70,21 @@ const ProductsList: React.FC = () => {
     <div className={s.Block}>
       <div className={s.header}>
         <div>
+          <Link href='/'>
+            <a>
+              <Button
+                height='3rem'
+                width='10rem'
+                borderRadius='0'
+                transition='.5s'
+                _focus={{
+                  boxShadow: '0px .2rem 0px 0px #00C8A0;',
+                }}
+              >
+                Back
+              </Button>
+            </a>
+          </Link>
           <Button
             height='3rem'
             width='10rem'
