@@ -1,0 +1,49 @@
+.Block
+  width: 100%
+  height: 100%
+  display: flex
+  flex-flow: column
+  justify-content: space-between
+
+.ProductsList
+  position: relative
+  width: 100%
+  height: calc( 100vh - 6rem )
+  overflow-y: scroll
+
+  &::-webkit-scrollbar
+    width: 0
+
+.layout
+  height: 100%
+  width: 100%
+  display: grid
+  justify-items: center
+  grid-template-columns: repeat(3, 33%)
+
+.header
+  position: relative
+  height: 3rem
+  background: #716D79
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+
+.search
+  display: flex
+  width: 30%
+
+.loading
+  display: flex
+  justify-content: center
+  align-items: center
+  background: #E8E9Ed
+  width: 100%
+  height: 100%
+
+.footer
+  display: flex
+  justify-content: space-between
+  width: 100%
+  height: 3rem
+  background: #9c9c9c
