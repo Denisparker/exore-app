@@ -1,17 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { FormEvent, useState } from 'react'
+import React, { useState } from 'react'
 import c from 'classnames'
 import s from './style.module.sass'
 import ProductCard from './components/ProductCard'
 import { useSelector } from 'react-redux'
-import {
-  Button,
-  Checkbox,
-  FormControl,
-  FormLabel,
-  Input,
-  Switch,
-} from '@chakra-ui/react'
+import { Button, FormControl, FormLabel, Input, Switch } from '@chakra-ui/react'
 import Link from 'next/link'
 
 const ProductsList: React.FC = () => {

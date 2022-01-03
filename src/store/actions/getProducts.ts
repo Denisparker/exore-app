@@ -17,11 +17,12 @@ export default function getProducts(
         .then((res) => res.json())
         .catch((err) => err)
         .then((products) => {
-          Array.isArray(products) ? (
-          dispatch({
-            type: SET_SERVER_PRODUCTS,
-            payload: products,
-          })) : []
+          Array.isArray(products)
+            ? dispatch({
+                type: SET_SERVER_PRODUCTS,
+                payload: products,
+              })
+            : []
         })
         .finally(() => dispatch(removeLoading(entry)))
     }

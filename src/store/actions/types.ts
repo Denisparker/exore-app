@@ -6,5 +6,3 @@ export const ADD_LOADING = 'ADD_LOADING'
 export const SET_SERVER_PRODUCTS = 'SET_SERVER_PRODUCTS'
 export const SET_PRODUCTS = 'SET_PRODUCTS'
 export const SET_USER = 'SET_USER'
-
-

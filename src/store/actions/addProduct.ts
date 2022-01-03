@@ -26,10 +26,11 @@ export default function addProduct(data: {
         description: data.description,
         image: data.image,
         category: data.category,
-        post: false
+        post: false,
       }),
     })
-      .then((res) => res.json()).catch((err) => err)
+      .then((res) => res.json())
+      .catch((err) => err)
       .then((product) => {
         const prevState = getState().localProducts
         let newId

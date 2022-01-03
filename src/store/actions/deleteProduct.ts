@@ -18,7 +18,8 @@ export default function deleteProduct(
     } else {
       fetch(`https://fakestoreapi.com/products/${id}`, {
         method: 'DELETE',
-      }).catch((err) => err)
+      })
+        .catch((err) => err)
         .then(() => {
           const products = getState().serverProducts.filter((i) => i.id !== id)
           dispatch({ type: SET_SERVER_PRODUCTS, payload: products })

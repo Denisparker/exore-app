@@ -4,7 +4,7 @@ import { addLoading, removeError, removeLoading } from '.'
 import { SET_USER } from './types'
 
 export default function login(
-  user: {name: string, password: string},
+  user: { name: string; password: string },
   onFinish: () => void
 ): ThunkAction<Promise<void>, StateValue, unknown, AnyAction> {
   return async (dispatch) => {
@@ -14,10 +14,10 @@ export default function login(
     dispatch(addLoading(entry))
 
     setTimeout(() => {
-      if(user.name !== 'Admin', user.password !== '123'){
+      if ((user.name !== 'Admin', user.password !== '123')) {
         alert('Данного пользователя не существует')
       } else {
-        dispatch({type: SET_USER, payload: user})
+        dispatch({ type: SET_USER, payload: user })
         onFinish()
       }
     })

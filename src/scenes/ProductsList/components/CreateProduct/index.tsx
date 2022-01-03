@@ -21,6 +21,8 @@ const CreateProduct: React.FC = () => {
 
   useEffect(() => {}, [query])
 
+  const user = useSelector(({ user }: StateValue) => user)
+
   const serverProducts = useSelector(
     ({ serverProducts }: StateValue) => serverProducts
   )
@@ -85,15 +87,19 @@ const CreateProduct: React.FC = () => {
                   boxShadow: '0px .2rem 0px 0px #00C8A0;',
                 }}
                 onClick={() => {
-                  if (
-                    !newProduct.title ||
-                    !newProduct.price ||
-                    !newProduct.category
-                  ) {
-                    alert('Данные заполнены некорректно')
+                  if (!user) {
+                    alert('Гость не может добавлять товар')
                   } else {
-                    alert('Успешно сохранено')
-                    handleClick()
+                    if (
+                      !newProduct.title ||
+                      !newProduct.price ||
+                      !newProduct.category
+                    ) {
+                      alert('Данные заполнены некорректно')
+                    } else {
+                      alert('Успешно сохранено')
+                      handleClick()
+                    }
                   }
                 }}
               >

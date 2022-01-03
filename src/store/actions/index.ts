@@ -17,4 +17,3 @@ export const removeError = (value: string) => ({
   type: t.REMOVE_ERROR,
   payload: value,
 })
-

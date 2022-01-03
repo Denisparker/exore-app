@@ -13,7 +13,7 @@ const initialState: StateValue = {
   loadings: [],
   serverProducts: [],
   localProducts: preloadedProducts ? JSON.parse(preloadedProducts) : [],
-  user: null
+  user: null,
 }
 
 export function reducer(state = initialState, { type, payload }: AnyAction) {

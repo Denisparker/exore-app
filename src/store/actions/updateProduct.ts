@@ -1,4 +1,3 @@
-import { identity } from 'lodash'
 import { AnyAction } from 'redux'
 import { ThunkAction } from 'redux-thunk'
 import { addLoading, removeError, removeLoading } from '.'
@@ -31,7 +30,8 @@ export default function updateProduct(
         category: newData.category,
       }),
     })
-      .then((res) => res.json()).catch((err) => err)
+      .then((res) => res.json())
+      .catch((err) => err)
       .then(() => {
         if (+newData.id > 20) {
           const newProduct = getState().localProducts.map((i) =>
